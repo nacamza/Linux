@@ -7,14 +7,14 @@ https://www.linode.com/docs/guides/using-fail2ban-to-secure-your-server-a-tutori
 ```` 
 apt-get install fail2ban
 ````
-Abrimos el archivo de configuracion
+Abrimos el archivo de configuración
 ````
 sudo nano /etc/fail2ban/jail.conf
 ````
 Podemos modificar las reglas generales donde:
 - bantime: es el tiempo de baneo
 - findtime: es la ventana de tiempo donde se cuentan los intentos fallidos
-- maxretry: cantidad maxima de intentos 
+- maxretry: cantidad máxima de intentos 
 ````
 # External command that will take an tagged arguments to ignore, e.g. <ip>,
 # and return true if the IP is to be ignored. False otherwise.
@@ -32,7 +32,7 @@ findtime  = 10m
 # "maxretry" is the number of failures before a host get banned.
 maxretry = 5
 ````
-O buscar un servicio en particular, buscamos **[sshd]** para configurar el acceso por ssh y lo configuramos para que despues de 3 intentos banee la ip por 86400 segundos
+O buscar un servicio en particular, buscamos **[sshd]** para configurar el acceso por ssh y lo configuramos para que después de 3 intentos banee la ip por 86400 segundos
 ````
 [sshd]
 
@@ -68,23 +68,24 @@ usermod -a -G sudo MyUser
 ````
 Despues, modifico las propiedades de los usuarios del grupo SUDO para que no pida contraseña  
 
-Abrimos el archivo a modificar con el siguiente comando 
+Abrimos sudoers con el siguiente comando (verifica sintaxis) 
 ````
 sudo visudo
 ````
-Y agreagamos NOPASSWD:ALL, como se muestra a continuacion 
+Y agregamos NOPASSWD:ALL, como se muestra a continuación 
 ````
 %sudo   ALL=(ALL:ALL) NOPASSWD:ALL
 ````
-Abrimos el archivo de configuracion ssh
+Abrimos el archivo de configuración ssh
 ````
 nano /etc/ssh/sshd_config
 ````
-Configuramos para que las conecciones ssh soporten solo un usuario
+Configuramos para que las conexiones ssh soporten solo un usuario, agregamos la siguiente línea al final del archivo
 ````
 AllowUsers MyUser
 ````
-Inicio servico SSH
+Inicio servicio SSH
 ````
 sudo systemctl enable ssh && sudo systemctl start ssh
 ````
+
