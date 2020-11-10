@@ -11,7 +11,28 @@ Abrimos el archivo de configuracion
 ````
 sudo nano /etc/fail2ban/jail.conf
 ````
-Buscamos **[sshd]** para configurar el acceso por ssh y lo configuramos para que despues de 3 intentos banee la ip por 86400 segundos
+Podemos modificar las reglas generales donde:
+- bantime: es el tiempo de baneo
+- findtime: es la ventana de tiempo donde se cuentan los intentos fallidos
+- maxretry: cantidad maxima de intentos 
+````
+# External command that will take an tagged arguments to ignore, e.g. <ip>,
+# and return true if the IP is to be ignored. False otherwise.
+#
+# ignorecommand = /path/to/command <ip>
+ignorecommand =
+
+# "bantime" is the number of seconds that a host is banned.
+bantime  = 10m
+
+# A host is banned if it has generated "maxretry" during the last "findtime"
+# seconds.
+findtime  = 10m
+
+# "maxretry" is the number of failures before a host get banned.
+maxretry = 5
+````
+O buscar un servicio en particular, buscamos **[sshd]** para configurar el acceso por ssh y lo configuramos para que despues de 3 intentos banee la ip por 86400 segundos
 ````
 [sshd]
 
@@ -27,11 +48,7 @@ maxretry = 3
 ````
 Iniciamos el servicio
 ````
-systemctl start fail2ban
-````
-Y habilitamos el servicio
-````
-systemctl enable fail2ban
+service start fail2ban
 ````
 Para ver los logs de fail2ban
 ````
