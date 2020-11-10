@@ -57,6 +57,7 @@ sudo nano /var/log/fail2ban.log
 
 ### Aceptar solo un usuario por ssh 
 https://eltallerdelbit.com/permisos-usuarios-grupos-ssh-server/
+
 Primero agregamos el usuario, q vamos a utilizar para conectarnos, al grupo sudo 
 ````
 sudo useradd MYUSER -G sudo
