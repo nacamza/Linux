@@ -55,7 +55,7 @@ Para ver los logs de fail2ban
 sudo nano /var/log/fail2ban.log
 ````
 
-### Aceptar solo un usuario por ssh (incompleto)
+### Aceptar solo un usuario por ssh 
 https://eltallerdelbit.com/permisos-usuarios-grupos-ssh-server/
 Primero agregamos el usuario, q vamos a utilizar para conectarnos, al grupo sudo 
 ````
@@ -71,13 +71,15 @@ Y agreagamos NOPASSWD:ALL, como se muestra a continuacion
 ````
 %sudo   ALL=(ALL:ALL) NOPASSWD:ALL
 ````
+Abrimos el archivo de configuracion ssh
+````
+nano /etc/ssh/sshd_config
+````
 Configuramos para que las conecciones ssh soporten solo un usuario
 ````
-sshd config AllowUsers USER
+AllowUsers USER
 ````
 Inicio servico SSH
 ````
 sudo systemctl enable ssh && sudo systemctl start ssh
 ````
-
-
