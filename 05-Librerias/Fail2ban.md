@@ -1,5 +1,5 @@
 ## Fail2ban
-Es una herramienta que nos da seguridad ante intentos de acceso al ssh por fuerza bruta
+Es una herramienta que nos da seguridad ante intentos de acceso por fuerza bruta
 
 https://www.linode.com/docs/guides/using-fail2ban-to-secure-your-server-a-tutorial/
 
@@ -11,7 +11,7 @@ Abrimos el archivo de configuracion
 ````
 sudo nano /etc/fail2ban/jail.conf
 ````
-Buscamos **[sshd]** y lo configuramos para que despues de 3 intentos banee la ip por 86400 segundos
+Buscamos **[sshd]** para configurar el acceso por ssh y lo configuramos para que despues de 3 intentos banee la ip por 86400 segundos
 ````
 [sshd]
 
@@ -38,7 +38,7 @@ Para ver los logs de fail2ban
 sudo nano /var/log/fail2ban.log
 ````
 
-### Aceptar solo un usuario por ssh
+### Aceptar solo un usuario por ssh (incompleto)
 https://eltallerdelbit.com/permisos-usuarios-grupos-ssh-server/
 Primero agregamos el usuario, q vamos a utilizar para conectarnos, al grupo sudo 
 ````
