@@ -21,10 +21,10 @@ Los asteriscos van separados por un espacio y sirven para indicar el contexto de
 - Día de la semana. Indicar un valor de 0 (domingo) a 6 (sábado).
 Otra opción para indicar el contexto de ejecución es sustituir todos los asteriscos por una sola palabra reservada
 ````
-@reboot /home/test/Documentos/scripts/mi-primer-script.sh
+@reboot sudo sh /home/nahuel/init.sh
 ````
 ````
-@reboot sleep 300 && /home/wwwjobs/clean-static-cache.sh
+@reboot sleep 300 && sudo sh /home/nahuel/init.sh
 ````
 Con esto ya tienes el fichero crontab configurado para ejecutar el script en cada arranque del sistema. Queda la tarea de comprobar que el servicio asociado a Cron esté habilitado. 
 ````
