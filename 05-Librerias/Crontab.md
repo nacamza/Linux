@@ -26,6 +26,12 @@ Otra opción para indicar el contexto de ejecución es sustituir todos los aster
 ````
 @reboot sleep 300 && sudo sh /home/nahuel/init.sh
 ````
+Ejemplo sh
+````
+sleep 30
+cd /home/nahuel/Deploy
+sudo docker-compose up -d
+````
 Con esto ya tienes el fichero crontab configurado para ejecutar el script en cada arranque del sistema. Queda la tarea de comprobar que el servicio asociado a Cron esté habilitado. 
 ````
 sudo systemctl status cron.service
