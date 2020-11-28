@@ -61,3 +61,34 @@ Adicionar al final del archivo:
 vm.swappiness=10
 ````
 Reiniciar para aplicar los cambios
+# [Instalar Zswap](https://geekland.eu/aligerar-el-sistema-con-zswap/) 
+Zswap es un módulo del kernel de Linux desarrollado por Seth Jennings. Zswap se incorpora al Kernel de Linux a partir de la versión 3.11 y su principal función, al igual que Zram, es evitar la paginación en disco para de esta forma poder incrementar el rendimiento de nuestro sistema.
+
+Verificar Kernel de Linux
+````
+uname -mrs
+````
+Abren una terminal y ejecutan el siguiente comando:
+````
+sudo nano /etc/default/grub
+````
+Una vez se abra el editor de texto tendremos que localizar una linea que empiece por el siguiente texto:
+````
+GRUB_CMDLINE_LINUX_DEFAULT
+````
+y modificarla con el siguiente valor
+´´´´
+GRUB_CMDLINE_LINUX_DEFAULT="quiet zswap.enabled=1"
+´´´´
+Una vez guardado el archivo tenemos que actualizar el grub para que se inicie Zswap en el próximo arranque de nuestro sistema operativo
+````
+sudo update-grub
+````
+Una vez actualizado el grub tan solo tenemos que reiniciar el ordenador. Una vez reiniciado el ordenador ya tan solo tenemos que comprobar que Zswap esté activado y funcionando
+````
+dmesg | grep zswap
+````
+
+
+
+
