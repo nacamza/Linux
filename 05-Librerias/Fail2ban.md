@@ -6,7 +6,7 @@ https://www.linode.com/docs/guides/using-fail2ban-to-secure-your-server-a-tutori
 ## Instalamos fail2ban
 ````
 apt-get update
-apt-get install fail2ban
+apt-get install fail2ban -y
 ````
 Abrimos el archivo de configuración
 ````
