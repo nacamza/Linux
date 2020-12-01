@@ -4,7 +4,8 @@ Es una herramienta que nos da seguridad ante intentos de acceso por fuerza bruta
 https://www.linode.com/docs/guides/using-fail2ban-to-secure-your-server-a-tutorial/
 
 ## Instalamos fail2ban
-```` 
+````
+apt-get update
 apt-get install fail2ban
 ````
 Abrimos el archivo de configuración
@@ -48,11 +49,11 @@ maxretry = 3
 ````
 Iniciamos el servicio
 ````
-service start fail2ban
+service fail2ban start
 ````
 Para ver los logs de fail2ban
 ````
-sudo nano /var/log/fail2ban.log
+sudo cat /var/log/fail2ban.log
 ````
 
 ### Aceptar solo un usuario por ssh 
