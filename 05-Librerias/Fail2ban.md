@@ -47,9 +47,9 @@ logpath = %(sshd_log)s
 backend = %(sshd_backend)s
 maxretry = 3
 ````
-Iniciamos el servicio
+Reiniciamos el servicio para que las modificaciones se apliquen
 ````
-service fail2ban start
+service fail2ban restart
 ````
 Para ver los logs de fail2ban
 ````
