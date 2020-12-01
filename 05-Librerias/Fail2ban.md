@@ -23,14 +23,14 @@ Podemos modificar las reglas generales donde:
 ignorecommand =
 
 # "bantime" is the number of seconds that a host is banned.
-bantime  = 10m
+bantime  = 30m
 
 # A host is banned if it has generated "maxretry" during the last "findtime"
 # seconds.
-findtime  = 10m
+findtime  = 30m
 
 # "maxretry" is the number of failures before a host get banned.
-maxretry = 5
+maxretry = 3
 ````
 O buscar un servicio en particular, buscamos **[sshd]** para configurar el acceso por ssh y lo configuramos para que después de 3 intentos banee la ip por 86400 segundos
 ````
