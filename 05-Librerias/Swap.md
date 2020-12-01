@@ -77,9 +77,9 @@ Una vez se abra el editor de texto tendremos que localizar una linea que empiece
 GRUB_CMDLINE_LINUX_DEFAULT
 ````
 y modificarla con el siguiente valor
-´´´´
+````
 GRUB_CMDLINE_LINUX_DEFAULT="quiet zswap.enabled=1"
-´´´´
+````
 Una vez guardado el archivo tenemos que actualizar el grub para que se inicie Zswap en el próximo arranque de nuestro sistema operativo
 ````
 sudo update-grub
