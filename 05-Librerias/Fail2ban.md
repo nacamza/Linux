@@ -24,11 +24,11 @@ Podemos modificar las reglas generales donde:
 ignorecommand =
 
 # "bantime" is the number of seconds that a host is banned.
-bantime  = 30m
+bantime  = 120m
 
 # A host is banned if it has generated "maxretry" during the last "findtime"
 # seconds.
-findtime  = 30m
+findtime  = 60m
 
 # "maxretry" is the number of failures before a host get banned.
 maxretry = 3
