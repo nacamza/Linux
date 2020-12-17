@@ -20,9 +20,9 @@ envsubst < "source.txt" > "destination.txt"
 Creamos los archivos **source.txt** y **.env**
 #### Source.txt
 ````
-Url = $SERVER_URL
-User = $USER_NAME
-Pass = $USER_PASSWORD
+Url = ${SERVER_URL}
+User = ${USER_NAME}
+Pass = ${USER_PASSWORD}
 ````
 #### .env
 ````
