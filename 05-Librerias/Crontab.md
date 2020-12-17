@@ -21,7 +21,9 @@ Los asteriscos van separados por un espacio y sirven para indicar el contexto de
 - Día del més. Indicar un valor de 1 a 31.
 - Mes. Indicar un valor de 1 a 12.
 - Día de la semana. Indicar un valor de 0 (domingo) a 6 (sábado).
+
 Además de eso, debes usar los caracteres adecuados en cada archivo crontab.
+
 - Asterisco (*): para definir todos los parámetros de programación.
 - Coma (,): para mantener dos o más tiempos de ejecución de un solo comando.
 - Guión (-): para determinar el intervalo de tiempo al configurar varios tiempos de ejecución de un solo comando.
