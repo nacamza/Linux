@@ -7,13 +7,36 @@ export USER_NAME=foo_user
 export USER_PASSWORD=mymonkey
 ````
 o podemos guardarlas en un archivo (por ejemplo .env) y luego cárguelos en su sesión de shell actual usando ``source .env``
+Si queremos modificar el actual
+````
+envsubst < config.txt
+````
 ### Sustitución
 Si queremos crear un nuevo archivo
 ````
 envsubst < "source.txt" > "destination.txt"
 ````
-Si queremos modificar el actual
+## Ejemplo
+Creamos los archivos **source.txt** y **.env**
+#### Source.txt
 ````
-envsubst < config.txt
+Url = $SERVER_URL
+User = $USER_NAME
+Pass = $USER_PASSWORD
 ````
+#### .env
+````
+export SERVER_URL=https://gitlab.com/skofgar
+export USER_NAME=foo_user
+export USER_PASSWORD=mymonkey
+````
+Luego levantamos las variables de entorno
+````
+source .env
+````
+y luego ejecutamos 
+````
+envsubst < "source.txt" > "destination.txt"
+````
+
 [Mas info](https://github.com/a8m/envsubst)
