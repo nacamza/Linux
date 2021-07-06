@@ -50,6 +50,16 @@ Adicionar al final del archivo:
 ````
 /swapfile   none    swap    sw    0   0
 ````
+## Eliminar Swap
+Ejecute el comando siguiente para desactivar el archivo swap
+````
+swapoff /swapfile
+````
+Elimine su entrada de /etc/fstab
+Elimine el archivo actual
+``
+rm /swapfile
+``
 ## Optimizar la Memoria SWAP
 Para mejorar el rendimiento es necesario modificar el parámetro swappiness.
 El «swappinness» es un valor que va de 0 a 100. Cuando el valor esté cerca de 0, no se intercambiará datos en el disco a menos que sea absolutamente necesario. Si por el contrario, el valor está más cerca de 100, se llevarán a cabo un mayor número de intercambios para dejar más espacio libre en la RAM.
